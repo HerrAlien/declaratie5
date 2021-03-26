@@ -16,7 +16,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
 (function() {
 var CACHE_PREFIX = 'Cache-for-declaratie-5';
-var CACHE_VERSION = '2';
+var CACHE_VERSION = '3';
 var CACHE_NAME = CACHE_PREFIX + '-' + CACHE_VERSION;
 
 var urlsToCache = [

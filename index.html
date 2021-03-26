@@ -1,0 +1,141 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ro" xml:lang="ro">
+    <head>
+
+        <title>DECLARAȚIE PE PROPRIE RĂSPUNDERE</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8"/>
+
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff" />
+
+        <link rel="icon" type="image/png" href="icon.png" />
+        <link rel="apple-touch-icon" href="icon-144.png" />
+        <link rel="icon" type="image/png" href="icon-144.png">
+        <link rel="apple-touch-startup-image" type="image/png" href="icon-256.png" />
+
+        <link rel="manifest" type="text/json" href="manifest.json" />
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        
+    </head>
+    <body>
+
+<div id="buton-print"></div>
+
+<h1>DECLARAȚIE PE PROPRIE RĂSPUNDERE</h1>
+
+<table id="date-identificare-adresa">
+    <tr>
+        <td><h2><label for="nume">Subsemnatul/a:</label></h2></td>
+        <td><input id="nume" type="text"/></td>
+    </tr>
+    <tr>
+        <td><h2><label for="adresa">domiciliat/ă în:</label></h2></td>
+        <td><input id="adresa" type="text"/></td>
+    </tr>
+    <tr>
+        <td><h2><label for="adresa">cu reședința în fapt în:</label></h2></td>
+        <td><input id="adresa_resedinta" type="text"/></td>
+    </tr>
+    <tr>
+        <td><h2><label for="data-nasterii">născut/ă în data de:</label></h2></td>
+        <td><input id="data-nasterii" type="date"/>
+            <input id="vizualizare-data-nasterii-zi" type="text"/>
+            <input id="vizualizare-data-nasterii-luna" type="text"/>
+            <input id="vizualizare-data-nasterii-an" type="text"/>
+            
+            <label for="locul_nasterii" id="locul_nasterii__label">în localitatea <input id="locul_nasterii" type="text"/></label>
+        
+        </td>
+    </tr>
+</table>
+
+<div id="motivul-deplasarii">
+<br/><br/><br/>declar pe proprie răspundere, cunoscând prevederile articolului 326 din Codul Penal privind falsul
+în declarații, că mă deplasez în afara locuinței, în intervalul orar 230.00 – 05.00, din următorul/
+următoarele motive:<br/><br/>
+<table>
+<tr>
+    <td><input id="check-1" type="checkbox"></td>
+    <td><label for="check-1"> În interes profesional. Menționez că îmi desfășor activitatea profesională la
+instituția/societatea/organizația <input id="nume_companie" type="text"/> <br/>
+cu sediul în <input id="adresa_companie" type="text"/><br/>
+și cu punct/e de lucru la următoarele adrese: <br/>
+<input id="adresa_punct_lucru_1" type="text"/><br/>
+<input id="adresa_punct_lucru_2" type="text"/>
+    </label></td>
+</tr>
+<tr>
+    <td><input id="check-2"  type="checkbox"></td>
+    <td><label for="check-2">Asistență medicală care nu poate fi amânată și nici realizată de la distanță (inclusiv vaccinare)</label></td>
+</tr>
+<tr>
+    <td><input id="check-3"  type="checkbox"></td>
+    <td><label for="check-3">Achiziționarea de medicamente</label></td>
+</tr>
+<tr>
+    <td><input  id="check-4" type="checkbox"></td>
+    <td><label for="check-4">Îngrijirea/însoțirea copilului și/sau asistența persoanelor vârstnice, bolnave sau cu dizabilități
+    </label></td>
+</tr>
+<tr>
+    <td><input  id="check-5" type="checkbox"></td>
+    <td><label for="check-5">Deces al unui membru al familiei</label><br/>
+    </td>
+</tr>
+</table>
+</div>
+<table id="data-semnatura">
+    <tr>
+        <td><label>Data: <input id="data-declaratie" type="date"></label>
+            <input id="vizualizare-data-declaratie" type="text"/>
+        </td>
+        <td><span>Semnătura: </span>
+            <input id="selectare-semnatura" type="button" value="Selecteaza imagine"/>
+            <input id="selectare-semnatura-fisier" type="file" value="Selecteaza imagine"/>
+            <img id="vizualizare-semnatura"/>
+        </td>
+    </tr>
+</table>
+<div id="version">
+</div>
+    </body>
+</html>
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('serviceworker.js').then(function (registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function (err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+    });
+}
+
+var CACHE_PREFIX = 'Cache-for-declaratie-5';
+caches.keys().then(names => {
+    var versions = "v";
+    for (var i = 0; i < names.length; i++) {
+        var name = names[i];
+
+        if (!name.startsWith(CACHE_PREFIX)) {
+            continue;
+        }
+
+        var versionPos = name.lastIndexOf('v');
+        if (versionPos < 0) {
+            versionPos = name.lastIndexOf('-');
+        }
+        if (versionPos < 0) {
+            continue;
+        }
+        versions += name.substring(versionPos + 1) + ",";
+    }
+
+    versions = versions.substring(1, versions.length - 1);
+    var div = document.getElementById("version");
+    div.textContent = "version " + versions;
+});
+
+</script>
+<script type="text/JavaScript" language="JavaScript" src="code.js"></script>

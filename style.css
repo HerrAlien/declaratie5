@@ -1,0 +1,311 @@
+:root {
+--font-size: 17px;
+}
+
+h1
+{
+    text-align: center;
+    width: 100%;
+}
+
+h2, input, textarea
+{
+    margin-bottom: 0;
+}
+
+input[type="checkbox"]
+{
+    transform: scale(1.5);
+}
+
+td
+{
+    vertical-align: top;
+}
+
+#data-semnatura > tbody > tr > td:nth-child(1)
+{
+    width: 50%;
+}
+
+#vizualizare-semnatura
+{
+    background-size: contain;
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table, #adresa_resedinta, #nume, 
+#adresa, #adresa_companie, 
+#adresa_punct_lucru_1,
+#adresa_punct_lucru_2,
+#nume_companie,
+#date-identificare-adresa,
+#data-semnatura
+{
+    width: 100%;
+}
+
+table
+{
+    margin: 0px;
+    padding: 0px;
+    border-spacing: 0;
+}
+
+#selectare-semnatura-fisier
+{
+    display: none;
+}
+
+@media screen
+{
+    body
+    {
+        margin: 20px;
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    body, td, table, tr, td > label
+    {
+        font-size: 14px;
+        font-family: Arial, Verdana, Sans;
+    }
+
+    h1
+    {
+        font-size: 20px;
+    }
+
+    h2, input, textarea, #locul_nasterii__label
+    {
+        font-size: var(--font-size);
+    }
+
+    #locul_nasterii
+    {
+        max-width: 150px;
+    }
+
+    #locul_nasterii__label
+    {
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    #date-identificare-adresa > tbody > tr > td:nth-child(1)
+    {
+        width: 25%;
+    }
+
+    #date-identificare-adresa
+    {
+        border-spacing: 2px;
+    }
+
+    #div-locul-deplasarii, #motivul-deplasarii, #data-semnatura
+    {
+        margin-top: 5px;
+    }
+
+        #vizualizare-data-nasterii-zi,
+        #vizualizare-data-nasterii-luna,
+        #vizualizare-data-nasterii-an,
+        #vizualizare-data-declaratie
+        {
+            display: none;
+        }
+
+        #data-semnatura, #footer, #version
+        {
+            margin-top: 30px;
+        }
+
+        #vizualizare-semnatura
+        {
+            width: 165px;
+            height: 100px;
+        }
+        #selectare-semnatura
+        {
+            display: block;
+        }
+
+        #buton-print
+        {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            z-index: 3;
+            padding: 5px;
+            background-color: white;
+            cursor: pointer;
+            font-family: Arial, Verdana;
+            background-image: url('print.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 32px;
+            height: 32px;
+        }
+
+        #motivul-deplasarii > table 
+        {
+            border-spacing: 10px;
+            color: #1a0dab;
+        }
+
+        #motivul-deplasarii > table > tbody > tr > td:nth-child(2) > label {
+            cursor: pointer;
+        }
+
+    }
+
+    @media screen and (max-width: 600px)
+    {
+        #locul_nasterii__label
+        {
+            left: 5;
+            position: absolute;
+            top: calc(13*var(--font-size));
+        }
+    }
+
+    @media print
+    {
+        html, #footer
+        {
+            width: 210mm;
+        }
+
+        html
+        {
+            height: 279mm;
+        }
+
+            body
+            {
+                padding-left: 20mm;
+                padding-top: 5mm;
+                padding-right: 5mm;
+                padding-bottom: 5mm; 
+                width: 100%;
+                height: 100%;
+            }
+
+            body, td
+            {
+                font-size: 4.5mm;
+                font-family: "Times New Roman", Times, serif;
+            }
+
+            h1
+            {
+                font-size: 7mm;
+                text-align: center;
+            }
+
+            h2, input, textarea, #locul_nasterii__label
+            {
+                font-size: 6mm;
+                margin-bottom: 0;
+            }
+
+            input[type="checkbox"]
+            {
+                transform: scale(1.5);
+            }
+
+            #date-identificare-adresa > tbody > tr > td:nth-child(1)
+            {
+                max-width:60mm;
+            }
+
+            #locul_nasterii
+            {
+                max-width:30mm;
+                width:30mm;
+            }
+
+            #locul_nasterii__label 
+            {
+                display: inline;
+                font-weight:bold;
+            }
+
+            #date-identificare-adresa
+            {
+                border-spacing-top: 2mm;
+                border-spacing-bottom: 2mm;
+                border-spacing-right: 0;
+                border-spacing-left: 0;
+            }
+
+            #div-locul-deplasarii, #motivul-deplasarii, #data-semnatura
+            {
+                margin-top: 5mm;
+            }
+
+            #data-nasterii, #data-declaratie, #selectare-semnatura, #version
+            {
+                display: none;
+            }
+
+            #vizualizare-data-nasterii-zi,
+            #vizualizare-data-nasterii-luna,
+            #vizualizare-data-nasterii-an
+            {
+                margin-right: 2mm;
+            }
+
+            #vizualizare-data-nasterii-zi,
+            #vizualizare-data-nasterii-luna
+            {
+                width: 16mm;
+            }
+
+            #vizualizare-data-nasterii-an
+            {
+                width: 21mm;
+            }
+
+            #vizualizare-data-declaratie
+            {
+                width: 50mm;
+            }
+
+            #vizualizare-semnatura
+            {
+                height: 27mm;
+                margin-left: 20mm;
+            }
+
+            #data-semnatura > tbody > tr > td:nth-child(2) > span
+            {
+                position: absolute;
+            }
+
+            #buton-print
+            {
+                display: none;
+            }
+
+            #motivul-deplasarii > table > tbody > tr > td:nth-child(1)
+            {
+                width: 1mm;
+                padding: 0;
+            }
+            
+            #motivul-deplasarii
+            {
+                border-spacing: 0;
+            }
+
+            #footer
+            {
+                page-break: avoid;
+            }
+
+}
